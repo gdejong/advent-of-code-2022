@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"github.com/joho/godotenv"
 	"os"
 	"os/exec"
 	"sort"
@@ -209,8 +210,17 @@ func runDay(year, day int) {
 }
 
 func main() {
+	loadEnv()
+	Execute()
+}
+
+func loadEnv() {
+	err := godotenv.Load()
+	if err != nil {
+		logrus.Fatal("Error loading .env file")
+	}
+
 	if os.Getenv("AOC_SESSION") == "" {
 		logrus.Fatal("Missing AOC_SESSION environment variable")
 	}
-	Execute()
 }

@@ -13,3 +13,4 @@
 
 # Project specific files
 bin/aocgen
+.env

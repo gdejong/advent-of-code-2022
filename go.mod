@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/dolmen-go/codegen v1.0.0
+	github.com/joho/godotenv v1.4.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.6.1
 )
