@@ -1,7 +1,6 @@
 package year2022
 
 import (
-	"gdejong/advent-of-code-2022/pkg/aoc"
 	"sort"
 	"strconv"
 )
@@ -9,17 +8,13 @@ import (
 type Day01 struct{}
 
 func (p Day01) PartA(lines []string) any {
-	input := aoc.Input(2022, 1)
-
-	caloriesPerElf := countCalories(input)
+	caloriesPerElf := countCalories(lines)
 
 	return caloriesPerElf[len(caloriesPerElf)-1]
 }
 
 func (p Day01) PartB(lines []string) any {
-	input := aoc.Input(2022, 1)
-
-	caloriesPerElf := countCalories(input)
+	caloriesPerElf := countCalories(lines)
 
 	return caloriesPerElf[len(caloriesPerElf)-1] + caloriesPerElf[len(caloriesPerElf)-2] + caloriesPerElf[len(caloriesPerElf)-3]
 }
