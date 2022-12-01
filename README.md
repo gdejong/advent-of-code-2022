@@ -21,3 +21,9 @@ Copy your cookie from adventofcode.com and paste it in your `.env` as the `AOC_S
 ```shell
 ./aocgen gen -y <year> -d <day>
 ```
+
+## Run a day
+
+```shell
+./aocgen run -y <year> -d <day>
+```
