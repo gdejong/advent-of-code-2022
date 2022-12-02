@@ -2,7 +2,7 @@ package gen
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -36,11 +36,11 @@ func WebInput(year, day int) []byte {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		logrus.Error("Warning: Could not authenticate with AOC server")
+		logrus.Error("Error: Failed to contact AOC server, status code: " + resp.Status)
 		return nil
 	}
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		logrus.Errorf("Error: %s", err)
 		return nil
