@@ -1,18 +1,14 @@
 package year2022
 
 import (
+	"gdejong/advent-of-code-2022/pkg/input"
 	"strings"
 )
 
 type Day02 struct{}
 
 func (p Day02) PartA(lines []string) any {
-	totalScore := 0
-
-	for _, line := range lines {
-		if line == "" {
-			continue
-		}
+	return input.ArrayMapAndSumOverNonEmptyLines(lines, func(line string) int {
 		fields := strings.Fields(line)
 		if len(fields) != 2 {
 			panic("expected 2 fields")
@@ -21,20 +17,12 @@ func (p Day02) PartA(lines []string) any {
 		opponentShape := letterToShape(fields[0])
 		myShape := letterToShape(fields[1])
 
-		totalScore += playRoundPart1(opponentShape, myShape)
-	}
-
-	return totalScore
+		return playRoundPart1(opponentShape, myShape)
+	})
 }
 
 func (p Day02) PartB(lines []string) any {
-	totalScore := 0
-
-	for _, line := range lines {
-		if line == "" {
-			continue
-		}
-
+	return input.ArrayMapAndSumOverNonEmptyLines(lines, func(line string) int {
 		fields := strings.Fields(line)
 		if len(fields) != 2 {
 			panic("expected 2 fields")
@@ -43,10 +31,8 @@ func (p Day02) PartB(lines []string) any {
 		opponentShape := letterToShape(fields[0])
 		actionToPlay := fields[1]
 
-		totalScore += playRoundPart2(opponentShape, actionToPlay)
-	}
-
-	return totalScore
+		return playRoundPart2(opponentShape, actionToPlay)
+	})
 }
 
 func playRoundPart2(opponentShape shape, actionToPlay string) int {
