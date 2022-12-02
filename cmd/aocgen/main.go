@@ -57,7 +57,6 @@ var buildCmd = &cobra.Command{
 		years := aoc.Years()
 		for _, y := range years {
 			gen.InitializePackage(y)
-			gen.NewBenchmarks(y)
 		}
 	},
 }
@@ -87,7 +86,6 @@ var genCmd = &cobra.Command{
 		gen.NewPuzzleFile(year, day)
 		gen.InitializePackage(year)
 		gen.InitializeYearsPackages()
-		gen.NewBenchmarks(year)
 	},
 }
 
