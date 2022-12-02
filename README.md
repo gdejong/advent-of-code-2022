@@ -13,17 +13,17 @@ Copy your cookie from adventofcode.com and paste it in your `.env` as the `AOC_S
 ## List input of a certain day
 
 ```shell
-./aocgen input -y <year> -d <day>
+./aocgen input -y 2022 -d <day>
 ```
 
 ## Generate a new day
 
 ```shell
-./aocgen gen -y <year> -d <day>
+./aocgen gen -y 2022 -d <day>
 ```
 
 ## Run a day
 
 ```shell
-./aocgen run -y <year> -d <day>
+./aocgen run -y 2022 -d <day>
 ```
