@@ -41,3 +41,39 @@ func TestArrayMapAndSumOverNonEmptyLines(t *testing.T) {
 		})
 	}
 }
+
+func TestChunk(t *testing.T) {
+	type args struct {
+		lines     []string
+		chunkSize int
+	}
+	tests := []struct {
+		name string
+		args args
+		want [][]string
+	}{
+		{
+			name: "test",
+			args: args{
+				lines:     []string{"a", "b", "c", "d"},
+				chunkSize: 2,
+			},
+			want: [][]string{{"a", "b"}, {"c", "d"}},
+		},
+		{
+			name: "test with newline",
+			args: args{
+				lines:     []string{"a", "b", "c", "d", ""},
+				chunkSize: 2,
+			},
+			want: [][]string{{"a", "b"}, {"c", "d"}},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Chunk(tt.args.lines, tt.args.chunkSize); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("Chunk() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
