@@ -2,19 +2,19 @@ package year2022
 
 import "testing"
 
+var testInputDay03 = []string{
+	"vJrwpWtwJgWrhcsFMMfFFhFp",
+	"jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+	"PmmdzqPrVvPwwTWBwg",
+	"wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+	"ttgJtRGJQctTZtZT",
+	"CrZsJsPPZsGzwwsLwLmpwMDw",
+}
+
 func TestDay03_PartA(t *testing.T) {
 	day := Day03{}
 
-	testInput := []string{
-		"vJrwpWtwJgWrhcsFMMfFFhFp",
-		"jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
-		"PmmdzqPrVvPwwTWBwg",
-		"wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
-		"ttgJtRGJQctTZtZT",
-		"CrZsJsPPZsGzwwsLwLmpwMDw",
-	}
-
-	got := day.PartA(testInput)
+	got := day.PartA(testInputDay03)
 
 	want := 157
 	if got != want {
@@ -25,16 +25,7 @@ func TestDay03_PartA(t *testing.T) {
 func TestDay03_PartB(t *testing.T) {
 	day := Day03{}
 
-	testInput := []string{
-		"vJrwpWtwJgWrhcsFMMfFFhFp",
-		"jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
-		"PmmdzqPrVvPwwTWBwg",
-		"wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
-		"ttgJtRGJQctTZtZT",
-		"CrZsJsPPZsGzwwsLwLmpwMDw",
-	}
-
-	got := day.PartB(testInput)
+	got := day.PartB(testInputDay03)
 
 	want := 70
 	if got != want {
